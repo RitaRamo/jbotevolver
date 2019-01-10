@@ -265,6 +265,10 @@ public class Simulator implements Serializable {
 			r.getController().end();
 		}
 	}
+	
+	public boolean getStopSimulation(){
+		return stopSimulation;
+	}
 
 	public double getTimeDelta() {
 		return timeDelta;
@@ -298,7 +302,7 @@ public class Simulator implements Serializable {
 		return environment.getRobots();
 	}
 
-	private void setup() {
+	public void setup() {
 		if (!this.setup) {
 			if (!environment.isSetup()) {
 				setupEnvironment();
